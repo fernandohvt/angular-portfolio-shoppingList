@@ -1,15 +1,19 @@
 
 import {Component} from '@angular/core'
-import { Ingridient } from 'src/app/shared/ingridient.model';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
     selector:'app-shoppinglist',
     templateUrl:'./shoppinglist.component.html'
 })
 export class ShoppingListComponent {
-    ingredients: Ingridient[] = [
-        new Ingridient('Apples',5),
-        new Ingridient('Tomatos',10)
+    ingredients: Ingredient[] = [
+        new Ingredient('Apples',5),
+        new Ingredient('Tomatos',10)
     ];
     constructor(){}
+
+    onIngredientAdded(ingredient: Ingredient){
+        this.ingredients.push(ingredient);
+    }
 }
