@@ -9,15 +9,12 @@ import { RecipeService } from '../../recipes.service';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe; 
- 
+  @Input() index: number;
   
   constructor(private _recipeService: RecipeService) { }
 
   ngOnInit(): void {
   }
-  onSelected(){
-    this._recipeService.recipeSelected.emit(this.recipe);
-    
-  }
+  
 
 }

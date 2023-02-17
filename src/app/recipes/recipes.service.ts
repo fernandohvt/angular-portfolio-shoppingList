@@ -20,5 +20,8 @@ export class RecipeService {
      getRecipeList(){
         return this._recipes.slice();
     }
+    getRecipeById(index:number){
+        return this._recipes[index];
+    }
 
 }
