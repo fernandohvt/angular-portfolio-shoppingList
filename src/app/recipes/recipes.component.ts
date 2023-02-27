@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { refCount } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
 import { Recipe } from './recipe.model';
 import { RecipeService } from './recipes.service';
 
@@ -11,13 +12,11 @@ import { RecipeService } from './recipes.service';
 })
 export class RecipesComponent implements OnInit {
   selectedRecipe: Recipe;
-  constructor(private _recipeService : RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this._recipeService.recipeSelected
-      .subscribe((recipe: Recipe) => {
-        this.selectedRecipe = recipe;
-      });
+ 
+    
   }
   
 
